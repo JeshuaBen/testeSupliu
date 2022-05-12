@@ -20,7 +20,7 @@ export const Header = styled.div `
   height: 15%;
   max-height: 5rem;
 
-  margin-top: 2rem;
+  margin-top: 1.6rem;
   padding: 1.2rem;
   background-color: ${({ theme }) => theme.colors.whiteBackground};
 
@@ -64,5 +64,4 @@ export const TextLabel = styled.span `
 export const FilterContainer = styled.div `
   width: 100%;
   margin-top: 0.5rem;
-
 `;

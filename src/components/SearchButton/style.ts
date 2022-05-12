@@ -10,7 +10,7 @@ export const Button = styled.button `
 
   border: 0;
 
-  transition: scale 0.4s;
+  transition: 0.4s scale;
 
     :hover {
       transform: scale(1.1);

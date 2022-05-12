@@ -14,6 +14,7 @@ import {
 import LogoImg from '../../assets/logo.png';
 import { Input } from '../../components/Input';
 import { SearchButton } from '../../components/SearchButton';
+import { Albuns } from '../../components/Albuns';
 
 export function Main() {
   const [loading, setLoading] = useState(false);
@@ -44,6 +45,12 @@ export function Main() {
           <Input />
           <SearchButton />
         </FilterContainer>
+        <Albuns 
+          title='Rei do Gado, 1961'
+          trackNumber='11'
+          trackName='Minas Gerais'
+          trackDuration='3:47'
+        />
       </Content>
 
     </Container>
