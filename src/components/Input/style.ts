@@ -16,7 +16,7 @@ export const Container = styled.div`
 
   :hover {
     cursor: pointer;
-    border: 1px solid RGBA(0, 86, 61, 0.18);
+    outline: 1px solid RGBA(0, 86, 61, 0.18);
   }
 
   position: relative;

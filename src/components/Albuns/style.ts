@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MdRestoreFromTrash, MdAdd } from "react-icons/md";
 
 export const Container = styled.div`
   width: 100%;
@@ -28,9 +29,36 @@ export const Year = styled.span`
   margin-left: 0.4rem;
 `;
 
+export const Button = styled.button`
+  display: flex;
+  border: 0;
+  border-radius: 35px;
+
+  background-color: ${({ theme }) => theme.colors.white};
+
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+  outline: 0;
+
+  :hover {
+    filter: brightness(0.8);
+  }
+`;
+
+export const IconWrapper = styled.span``;
+
+export const TrashIcon = styled(MdRestoreFromTrash)`
+  background-color: ${({ theme }) => theme.colors.white};
+
+  border-radius: 35px;
+`;
+
+export const AddIcon = styled(MdAdd)``;
+
 export const InfoContainer = styled.div`
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin-top: 1.2rem;
 
@@ -49,8 +77,9 @@ export const TrackContainer = styled.div`
   padding-right: 0.4rem;
 `;
 
-export const NumberContainer = styled.div`
-  margin-right: 2.4rem;
+export const TextContainer = styled.div`
+  width: 14%;
+  margin-right: 0.9rem;
 `;
 
 export const Number = styled.span`
@@ -61,9 +90,7 @@ export const Track = styled.span`
   font-family: "Roboto", sans-serif;
   font-weight: 700;
 `;
-export const DurationContainer = styled.div`
-  margin-right: 0.8rem;
-`;
+export const DurationContainer = styled.div``;
 export const Duration = styled.span`
   font-family: "Roboto", sans-serif;
   font-weight: 700;
@@ -79,6 +106,7 @@ export const TrackInfoContainer = styled.div`
   }
 `;
 export const TrackNumberContainer = styled.div`
+  width: 30%;
   display: flex;
   align-items: center;
 
@@ -90,6 +118,17 @@ export const TrackNumber = styled.span`
 export const TrackName = styled.span`
   font-family: "Roboto", sans-serif;
 `;
+
+export const DurationContainer2 = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 6%;
+`;
+
 export const TrackDuration = styled.span`
   font-family: "Roboto", sans-serif;
 `;
+
+export const TrashButton = styled.button``;

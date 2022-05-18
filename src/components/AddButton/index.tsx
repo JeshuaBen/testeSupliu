@@ -1,8 +1,11 @@
+import { ButtonHTMLAttributes } from "react";
 import { Button, Text, Icon, Container } from "./style";
 
-export function AddButton() {
+interface AddButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+
+export function AddButton({ ...rest }: AddButtonProps) {
   return (
-    <Button>
+    <Button {...rest}>
       <Container>
         <Text>Adicionar</Text>
         <Icon></Icon>

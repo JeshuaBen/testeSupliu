@@ -43,6 +43,8 @@ export const Title = styled.span`
 export const Content = styled.div`
   width: 70%;
   height: 75%;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
   background: rgba(255, 255, 255, 0.7);
 

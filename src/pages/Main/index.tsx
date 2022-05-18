@@ -15,9 +15,11 @@ import LogoImg from "../../assets/logo.png";
 import { Input } from "../../components/Input";
 import { AddButton } from "../../components/AddButton";
 import { Albuns } from "../../components/Albuns";
+import { useDisclosure } from "@chakra-ui/react";
+import { ModalAddAlbum } from "../../components/ModalAddAlbum";
 
 interface AlbumProps {
-  id: string;
+  id: number;
   name: string;
   tracks: [
     {
@@ -34,9 +36,13 @@ export function Main() {
   const [loading, setLoading] = useState<boolean>(false);
   const [albunsData, setAlbunsData] = useState<AlbumProps[]>([]);
   const [searchText, setSearchText] = useState("");
+  const [forceUpdate, setForceUpdate] = useState<boolean>(false);
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
     setLoading(true);
+
     api
       .get("/album")
       .then((res) => {
@@ -44,13 +50,17 @@ export function Main() {
       })
       .catch((error) => console.error(`Ops, aconteceu o erro. ${error}`))
       .finally(() => setLoading(false));
-  }, []);
+  }, [forceUpdate]);
 
   const filteredAlbuns: AlbumProps[] = albunsData.filter(
     (album: AlbumProps) => {
       return album.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1;
     }
   );
+
+  const handleForceUpdate = () => {
+    setForceUpdate((previous) => !previous);
+  };
 
   return (
     <Container>
@@ -63,10 +73,19 @@ export function Main() {
         <TextLabel>Digite uma palavra chave</TextLabel>
         <FilterContainer>
           <Input searchText={searchText} setSearchText={setSearchText} />
-          <AddButton />
+          <AddButton onClick={onOpen} />
         </FilterContainer>
-        <Albuns data={searchText !== "" ? filteredAlbuns : albunsData} />
+        <Albuns
+          data={searchText !== "" ? filteredAlbuns : albunsData}
+          handleForceUpdate={handleForceUpdate}
+        />
       </Content>
+
+      <ModalAddAlbum
+        isOpen={isOpen}
+        onClose={onClose}
+        handleForceUpdate={handleForceUpdate}
+      />
     </Container>
   );
 }
