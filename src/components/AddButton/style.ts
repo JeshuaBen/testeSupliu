@@ -10,10 +10,10 @@ export const Button = styled.button`
 
   border: 0;
 
-  transition: 0.4s scale;
+  transition: 0.4s filter;
 
   :hover {
-    transform: scale(1.1);
+    filter: brightness(0.8);
   }
 `;
 

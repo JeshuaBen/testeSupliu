@@ -28,7 +28,6 @@ import {
   TrashButton,
 } from "./style";
 
-import api from "../../services/api";
 import { ModalRemove } from "../ModalRemove";
 import { ModalAddTrack } from "../ModalAddTrack";
 

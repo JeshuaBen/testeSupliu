@@ -54,7 +54,19 @@ export function Main() {
 
   const filteredAlbuns: AlbumProps[] = albunsData.filter(
     (album: AlbumProps) => {
-      return album.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1;
+      if (album.name.toLowerCase().includes(searchText.toLowerCase())) {
+        return true;
+      }
+
+      let found = false;
+
+      album.tracks.forEach((track) => {
+        if (track.title.toLowerCase().includes(searchText.toLowerCase())) {
+          return (found = true);
+        }
+      });
+
+      return found;
     }
   );
 

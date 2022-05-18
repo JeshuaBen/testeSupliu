@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MdRestoreFromTrash, MdAdd } from "react-icons/md";
+import { MdDelete, MdAdd } from "react-icons/md";
 
 export const Container = styled.div`
   width: 100%;
@@ -47,9 +47,10 @@ export const Button = styled.button`
 
 export const IconWrapper = styled.span``;
 
-export const TrashIcon = styled(MdRestoreFromTrash)`
+export const TrashIcon = styled(MdDelete)`
   background-color: ${({ theme }) => theme.colors.white};
 
+  color: ${({ theme }) => theme.colors.red};
   border-radius: 35px;
 `;
 
